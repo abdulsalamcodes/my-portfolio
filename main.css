@@ -7,7 +7,6 @@ html {
     scroll-behavior: smooth;
     font-size: 62.5%;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -136,7 +135,7 @@ a {
 
 /* Hero SECTION */
 .header {
-    background: url(./images/bgImg2.jpg);
+    /* background: url(./images/bgImg2.jpg); */
     /* background-color:; */
     background-size: cover;
     background-position: center;
@@ -164,6 +163,7 @@ a {
 }
 
 .about {
+    margin-top: var(--section-gutter);
     margin-bottom: var(--section-gutter);
 }
 
@@ -203,7 +203,15 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3em;
+    column-gap: 10rem;
     align-items: center;
+}
+
+.items > a:hover {
+    transition: all .5s;
+}
+.items > a:hover {
+    transform: translateY(-5px);
 }
 
 .item {
@@ -215,6 +223,7 @@ a {
     font-size: 30px;
     line-height: 35px;
     color: #F05E23;
+    margin-top: 2rem;
 }
 
 /* Works */
@@ -242,6 +251,9 @@ a {
 }
 .contact header {
     margin-bottom: var(--insection-gutter);
+}
+.contact p {
+    margin: 0;
 }
 
 form  div{
@@ -273,7 +285,9 @@ button {
     margin-top: 0;
     border-radius: 3px;
 }
-
+address .fa {
+    margin-right: .5rem;
+}
 /* Footer */
 
 footer {
@@ -299,6 +313,9 @@ footer {
 
 
 @media (max-width: 550px) {
+    html {
+        font-size: 50%;
+    }
     .header {
         min-height: 50vh;
     }
