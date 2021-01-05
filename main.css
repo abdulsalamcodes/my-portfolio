@@ -397,11 +397,11 @@ footer {
 }
 
 .image_container {
-    --d: 5.5em;
+    --d: 4.5em;
     /* image size */
     --rel: 1;
     /* how much extra space we want between images, 1 = one image size */
-    --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan));
+    --r: calc(.6*(1 + var(--rel))*var(--d)/var(--tan));
     /* circle radius */
     --s: calc(2*var(--r) + var(--d));
     /* container size */
@@ -588,6 +588,8 @@ footer {
         justify-content: center;
     }
     .image_container {
-        --d: 4em;
+        --d: 3em;
+        --r: calc(.7*(1 + var(--rel))*var(--d)/var(--tan));
+
     }
 }
