@@ -14,6 +14,8 @@ navLinks.forEach(element => {
     element.addEventListener("click", () => {
         nav.classList.remove("navmobile");
         navbar.classList.remove('styleNav');
+        toggle.classList.remove('transform');
+
 
     })
 });
