@@ -7,6 +7,7 @@ const navLinks = document.querySelectorAll(".nav-item");
 function displayNav() {
     nav.classList.toggle("navmobile");
     navbar.classList.toggle('styleNav');
+    toggle.classList.toggle('transform');
 }
 
 navLinks.forEach(element => {

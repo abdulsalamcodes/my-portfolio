@@ -27,7 +27,6 @@ html {
     text-align: center;
 }
 
-
 .mb-3 {
     margin-bottom: 3rem;
 }
@@ -70,11 +69,12 @@ body {
 }
 
 .btn {
-    background-color: #F05E23;
+    background-color: #e64506;;
     padding: 1rem 2rem;
     margin-top: 3rem;
     border-radius: 5px;
     font-size: 1.4rem;
+    color: white;
 }
 
 .btn_with_icon {
@@ -86,6 +86,7 @@ body {
 .btn_with_icon svg {
     margin-left: .5rem;
 }
+
 /* NAVIGATION */
 
 .toggle {
@@ -149,9 +150,11 @@ a {
     font-size: 1.8rem;
     margin-top: 20%;
 }
+
 .hero__text {
     max-width: 500px;
 }
+
 /* Hero SECTION */
 
 .header {
@@ -324,8 +327,6 @@ a {
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 6px hsla(230, 27%, 21%, 0.2);
-
-
 }
 
 .contact p {
@@ -378,7 +379,7 @@ address .fa {
     margin-right: .5rem;
 }
 
-.box p > a {
+.box p>a {
     text-decoration: underline;
 }
 
@@ -387,7 +388,6 @@ address .fa {
 footer {
     padding: 2rem 0;
 }
-
 
 .skills_wrapper {
     display: flex;
@@ -429,8 +429,9 @@ footer {
         font-size: 50%;
     }
     .header {
-        min-height: 50vh;
-        padding-top: 7rem;
+        min-height: 100vh;
+        position: static;
+        /* padding-top: 7rem; */
     }
     .me {
         font-size: 4.5rem;
@@ -470,17 +471,72 @@ footer {
         margin-left: auto;
         justify-self: center;
         position: absolute;
-        right: 10px;
-        top: 20px;
+        right: 15px;
+        top: 25px;
     }
+
     .toggle-btn {
+        opacity: 1;
+    }
+    .toggle::after {
+        right: 0px;
+        bottom: 5px;
+        transform: rotate(0);
+    }
+    .toggle::before {
+        transform: rotate(0);
+        top: 5px;
+        right: 0px;
+    }
+
+    .toggle-btn, .toggle::before, .toggle::after {
         display: block;
         width: 30px;
         height: 2px;
-        margin: 3px 0;
+        background-color: #fff;
+        border-radius: 3px;
         background-color: #fff;
         border-radius: 3px;
     }
+    .toggle::before, .toggle::after {
+        content: "";
+        display: block;
+        position: absolute;
+    }
+
+    .transform .toggle-btn {
+        opacity: 0;
+    }
+   .transform::after {
+        right: 7px;
+        bottom: -5px;
+        transform: rotate(42deg);
+        animation: animate .5s ease-out;
+    }
+   .transform::before {
+        transform: rotate(-40deg);
+        animation: animate-neg .5s ease-out;
+        top: 5px;
+        right: 7px;
+    }
+
+    @keyframes animate-neg {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-40deg);
+        }
+    }
+    @keyframes animate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(42deg);
+        }
+    }
+   
     .navbar {
         transform: translateY(-100%);
         transition: all .3 ease-in;
@@ -494,12 +550,19 @@ footer {
         background-color: var(--main-color);
         padding: 1rem;
         text-align: center;
-        margin-top: 41px;
         transform: translateY(0);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+    .hero__text {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+
     }
     .styleNav .nav-item {
         margin-right: 0;
@@ -519,12 +582,10 @@ footer {
         gap: 3em;
         align-items: center;
     }
-
     .skills_wrapper {
-        margin-top: 4rem;
+        margin: 4rem 0 6rem;
         justify-content: center;
     }
-    
     .image_container {
         --d: 4em;
     }
